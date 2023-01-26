@@ -1,3 +1,15 @@
 This text file contains the resources I have used to create this blogging app:
 
 https://djangocentral.com/building-a-blog-application-with-django/
+admin site:
+username: admin
+emailaddress: vivek.seelam29@gmail.com
+password: VivekDjangoProject
+
+Well that was fast enough,
+1. people have to type http://127.0.0.1:8000/admin/ and then create a new user and login 
+2. create content there
+3. But maybe this is only for me. which makes sense because I want to say something and put it on the internet
+
+Next part is trying to get Twitter trends
+
