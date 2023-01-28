@@ -13,3 +13,5 @@ Well that was fast enough,
 
 Next part is trying to get Twitter trends
 
+https://wordpress.com/post/hangryowl.wordpress.com -- is the wordpress blog that I am currently using to test the application
+

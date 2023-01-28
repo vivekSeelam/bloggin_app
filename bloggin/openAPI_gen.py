@@ -33,6 +33,13 @@ for topic in topic_list:
 
     generated_text = response.json()['choices'][0]['text']
 
-    
+    # How to get the code into a blog
+    # Does it even make sense to create a blog on your own??
+    # Open the wordpress website and go to the create new blog page.
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
 
+    driver = webdriver.Chrome('./chromedriver.exe')
+
+    driver.find_element(by=By.)
 
