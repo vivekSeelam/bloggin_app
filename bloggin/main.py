@@ -14,7 +14,7 @@ wordpress_agent = WordPress()
 for topic in trending_topics_list:
 
     blog_ideas = TextGen.get_bloggin_ideas(topic=topic, word_limit=20, no_of_ideas=2)
-    print(blog_ideas)
+    logging.info(blog_ideas)
     # hopefully it is a list; if not we will convert it to one
 
     for idea in blog_ideas:
@@ -24,7 +24,7 @@ for topic in trending_topics_list:
         wordpress_agent.update_text(title=idea ,text=blog_text)
         wordpress_agent.publish()
         wordpress_agent.close_the_window()
-        print("created the blog please verify manually")
+        logging.info("created the blog please verify manually")
     
 
 
