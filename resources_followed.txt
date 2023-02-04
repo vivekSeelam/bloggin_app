@@ -15,3 +15,9 @@ Next part is trying to get Twitter trends
 
 https://wordpress.com/post/hangryowl.wordpress.com -- is the wordpress blog that I am currently using to test the application
 
+what is DOM?
+how to use Javascript to do things here?
+what are shadow roots? 
+
+<h1 class="wp-block wp-block-post-title block-editor-block-list__block editor-post-title editor-post-title__input rich-text" aria-label="Add a post title" role="textbox" aria-multiline="true" style="white-space: pre-wrap; min-width: 1px;" contenteditable="true"> <span data-rich-text-placeholder="Add a post title" style="pointer-events:none;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;" contenteditable="false"></span></h1>
+
