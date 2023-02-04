@@ -1,6 +1,7 @@
 import requests
 from config import Config
 import constants
+import logging
 
 class chatgpt_agent:
 
@@ -8,6 +9,7 @@ class chatgpt_agent:
         self.json_data = None
         self.config = Config()
         self.headers = self.config.headers
+        logging.info("initiliased the chatgpt class")
 
     def clean_data(self, data_list):
         cleaned_data_list = []
@@ -25,9 +27,13 @@ class chatgpt_agent:
             'temperature': 0,
             'max_tokens': constants.MAX_TOKEN,
         }
+        logging.info(f"Sent the request to openAI for blog text on topic {topic}")
+
         
         response = requests.post(constants.OPENAI_URL, headers=self.headers, json=self.json_data)
         response.raise_for_status()
+        logging.info(f"Sent the response to openAI for blog text on topic {topic}")
+
         generated_text = response.json()['choices'][0]['text']
 
         return generated_text
@@ -40,9 +46,11 @@ class chatgpt_agent:
             'temperature': 0,
             'max_tokens': constants.MAX_TOKEN,
         }
-
+        logging.info(f"Sent the reuest to openAI for blog ideas on topic {topic}")
         response = requests.post(constants.OPENAI_URL, headers=self.headers, json=self.json_data)
         response.raise_for_status()
+        logging.info("Recieved the response to openAI for blog ideas")
+
         generated_text = response.json()['choices'][0]['text']
 
         # For some reason there are 2 \ns in the beginnging and i am trying to skip them.

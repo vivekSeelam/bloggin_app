@@ -1,5 +1,6 @@
 import pandas as pd
 from pytrends.request import TrendReq
+import logging
 
 class google_trend_boy:
     def __init__(self):
@@ -13,4 +14,5 @@ class google_trend_boy:
         topic_list = []
         for topic in df[0]:
             topic_list.append(topic)
+        logging.info("Received the google trends list")
         return topic_list

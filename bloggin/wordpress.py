@@ -1,19 +1,25 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import logging
 
 import time
 
 class WordPress:
 
-    def __init__(self, gen_title, gen_blog_text):
-        self.driver = webdriver.Firefox()
-        blog_url = "https://hangryowl.wordpress.com/"
-        self.driver.get(blog_url)
+    def __init__(self):
+        self.driver = None
+        self.blog_url = "https://hangryowl.wordpress.com/"
+        logging.info("Initialised the wordpress class")
+        
 
     def login(self, username, password):
+        self.driver = webdriver.Firefox()
+        self.driver.get(self.blog_url)
+        time.sleep(10)
         xpath_login = "//a[contains(text(), 'Log in')]"
         self.driver.find_element(by=By.XPATH,value=xpath_login).click()
+        
 
         xpath_email_field = "//input[@id='usernameOrEmail']"
         # TODO: keep the userid and password somewhere safe and not hardcode them
