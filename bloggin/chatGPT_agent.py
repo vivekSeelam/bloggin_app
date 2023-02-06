@@ -32,7 +32,7 @@ class chatgpt_agent:
         
         response = requests.post(constants.OPENAI_URL, headers=self.headers, json=self.json_data)
         response.raise_for_status()
-        logging.info(f"Sent the response to openAI for blog text on topic {topic}")
+        logging.info(f"Recieved the response to openAI for blog text on topic {topic}")
 
         generated_text = response.json()['choices'][0]['text']
 
@@ -42,11 +42,13 @@ class chatgpt_agent:
     def get_bloggin_ideas(self, topic, word_limit, no_of_ideas=3) -> list: 
         self.json_data = {
             'model': 'text-davinci-003',
-            'prompt': f'Give {no_of_ideas} hot bloggin ideas about {topic} each idea around {word_limit} words',
+            'prompt': f'Give only {no_of_ideas} hot blogging ideas about {topic}, each idea around {word_limit} words',
             'temperature': 0,
             'max_tokens': constants.MAX_TOKEN,
         }
-        logging.info(f"Sent the reuest to openAI for blog ideas on topic {topic}")
+        logging.info(f"Sent the request to openAI for blog ideas on topic {topic}")
+        logging.info(f"{self.json_data['prompt']}")
+
         response = requests.post(constants.OPENAI_URL, headers=self.headers, json=self.json_data)
         response.raise_for_status()
         logging.info("Recieved the response to openAI for blog ideas")

@@ -42,6 +42,9 @@ class WordPress:
     def update_text(self,title, text):
         xpath_write_butt = "//span[contains(text(),'Write')]"
         self.driver.find_element(by=By.XPATH,value=xpath_write_butt).click()
+        # write_button_click = """document.getElementsByClassName("ab-item")[5].click()"""
+        # self.driver.execute(write_button_click)
+
 
         self.driver.implicitly_wait(10)
 
