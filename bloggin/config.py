@@ -1,3 +1,4 @@
+from credential import bearer_token
 class Config:
 
     
@@ -11,7 +12,7 @@ class Config:
             # Already added when you pass json=
             # 'Content-Type': 'application/json',
             # TODO: Need to store these API keys to some service like rollout
-            'Authorization': 'Bearer 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',
+            'Authorization': f'Bearer {bearer_token}',
         }
     
 
